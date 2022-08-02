@@ -1,0 +1,49 @@
+I"À<h2 id="background">Background</h2>
+
+<p>The WiDS Datathon is an annual competition hosted by Women in Data Science. This particular dataset was created in collaboration with Climate Change AI (CCAI) and Lawrence Berkeley National Laboratory (Berkeley Lab). The mandate was to analyze differences in building energy efficiency, creating models to predict building energy consumption. Variables included building characteristics and climate and weather variables for the regions in which the buildings are located. The benefits of making accurate predictions of energy consumption are to help policymakers target retrofitting efforts to maximize emissions reductions.</p>
+
+<h2 id="my-approach">My Approach</h2>
+
+<p>I participated in this Datathon because I wanted to work with a dataset that was connected to the environment. I also wanted to learn how to deal with missing values, and how to select the most salient features to improve predictive power. You can view the <a href="https://nbviewer.org/github/nupur2308/WIDs-Datathon/blob/master/wids-datathon-final.ipynb"><strong>full notebook</strong></a> here.</p>
+
+<ol>
+  <li>Understand Missing Values</li>
+  <li>Impute Missing Values</li>
+  <li>Feature Engineering</li>
+  <li>Select Features</li>
+</ol>
+
+<h3 id="1-understand-missing-values">1. Understand Missing Values</h3>
+
+<p>In this section I wanted to get a birdâ€™s eye view of the missing values in the dataset. I used code from participating notebooks to visualize the missing values and understand the relationship between missing values and all other variables. I found that Energy Star Rating was missing 35% of total values and had the highest correlation to my target variable, Site EUI (Energy Usage Intensity).</p>
+
+<blockquote>
+  <p>Missing values in training data</p>
+</blockquote>
+
+<p><img src="\img\posts\wids-datathon\output_11_0.png" alt="Missing Values" /></p>
+
+<blockquote>
+  <p>How are missing values correlated to other variables?</p>
+</blockquote>
+
+<p><img src="\img\posts\wids-datathon\output_16_0.png" alt="Missing Values Relationship with All Variables" /></p>
+
+<h3 id="2-model-to-impute-missing-values">2. Model to Impute Missing Values</h3>
+
+<p>Since Energy Star Rating was highly correlated to our target variable Site EUI, I created a model to impute the missing values instead of using something like Simple Imputer.</p>
+
+<p>I imputed Energy Star Rating for the whole train set and not inside the cross validation loop as it would have been computationally expensive. I used a holdout dataset to compare the predictions against. The results were better than using simply the median (23% lower RMSE; reduction from 29.56 to 22.73).</p>
+
+<blockquote>
+  <p>Missing Value Model Predictions vs Holdout Data</p>
+</blockquote>
+
+<p><img src="\img\posts\wids-datathon\output_76_0.png" alt="Missing Values Model Imputation Results" /></p>
+
+<h3 id="3-feature-engineering">3. Feature Engineering</h3>
+
+<h3 id="4-select-features">4. Select Features</h3>
+
+<h2 id="results">Results</h2>
+:ET
