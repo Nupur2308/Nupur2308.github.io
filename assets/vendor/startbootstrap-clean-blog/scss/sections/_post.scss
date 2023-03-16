@@ -56,8 +56,11 @@ blockquote {
     text-align: center;
     margin: 20px;
     padding: 20px;
+    width:100%;
     quotes: "\201C""\201D""\2018""\2019";
     border-radius: 30px;
     color: #ffffff;
     font-size: 20px;
+    font-style:normal;
+    font-family:helvetica;
 }
