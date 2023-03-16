@@ -52,15 +52,16 @@
 
 blockquote {
     background: #585555;
-    border-left: 10px solid #ccc;
+    border-left: 10px solid #383838;
     text-align: center;
     margin: 20px;
     padding: 20px;
     width:100%;
     quotes: "\201C""\201D""\2018""\2019";
     border-radius: 30px;
-    color: #ffffff;
+    color: #383838;
     font-size: 20px;
     font-style:normal;
+    font-weight:bold;
     font-family:helvetica;
 }
