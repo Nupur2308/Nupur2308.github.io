@@ -22,7 +22,7 @@ I participated in this Datathon because I wanted to work with a dataset that was
 
 ### 1. Understand Missing Values
 
-In this section I wanted to get a bird's eye view of the missing values in the dataset. I used code from participating notebooks to visualize the missing values and understand the relationship between missing values and all other variables. I found that Energy Star Rating was missing 35% of total values and had the highest correlation to my target variable, Site EUI (Energy Usage Intensity).
+In this section I wanted to get a bird's eye view of the missing values in the dataset. I used code from participating notebooks to visualize the missing values and understand the relationship between missing values and all other variables. I found that Energy Star Rating was missing 35% of total values and had the highest correlation to my target variable, `site_eui` (Energy Usage Intensity).
 
 <blockquote style="background: #3DED97;">Missing values in training data</blockquote>
 
@@ -34,7 +34,7 @@ In this section I wanted to get a bird's eye view of the missing values in the d
 
 ### 2. Model to Impute Missing Values
 
-Since Energy Star Rating was highly correlated to our target variable Site EUI, I created a model to impute the missing values instead of using something like Simple Imputer.
+Since Energy Star Rating was highly correlated to our target variable `site_eui`, I created a model to impute the missing values instead of using something like Simple Imputer.
 
 I imputed Energy Star Rating for the whole train set and not inside the cross validation loop as it would have been computationally expensive. I compared predictions against a holdout set. The results were better than using Simple Impute median values (23% lower RMSE; reduction from 29.56 to 22.73).
 
@@ -44,7 +44,7 @@ I imputed Energy Star Rating for the whole train set and not inside the cross va
 
 ### 3. Feature Engineering
 
-I created several features using the existing dataset. One of the engineered features with the most predictive power was the Site EUI Lag, i.e, the Site EUI of a building from previous years. Credit for this feature goes to the winning team. Several of the other engineered features also had high contributions to the predictions.
+I created several features using the existing dataset. One of the engineered features with the most predictive power was the `site_eui` lag, i.e, the `site_eui` of a building from previous years. Credit for this feature goes to the winning team. Several of the other engineered features also had high contributions to the predictions.
 
 I visualized some of the features below:
 
@@ -75,7 +75,7 @@ Finally, I created a cross validation loop to select features. I used the Catboo
 - Retrain the model on selected features.
 -	Predict validation set and calculate RMSE of validation set.
 
-After this loop I selected the features that were chosen in at least 3 iterations – stable features that were the most predictive of my target variable Site EUI.
+After this loop I selected the features that were chosen in at least 3 iterations – stable features that were the most predictive of my target variable `site_eui`.
 
 ## Results
 
