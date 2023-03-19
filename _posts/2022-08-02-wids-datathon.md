@@ -24,13 +24,13 @@ I participated in this Datathon because I wanted to work with a dataset that was
 
 In this section I wanted to get a bird's eye view of the missing values in the dataset. I used code from participating notebooks to visualize the missing values and understand the relationship between missing values and all other variables. I found that Energy Star Rating was missing 35% of total values and had the highest correlation to my target variable, Site EUI (Energy Usage Intensity).
 
-> Missing values in training data
+<blockquote style="background: #3DED97;">Missing values in training data</blockquote>
 
-![Missing Values](\img\posts\wids-datathon\output_11_0.png)
+<center><img src="/img/posts/wids-datathon/output_11_0.png" width = "100% "> <br><br></center>
 
-> How are missing values correlated to other variables?
+<blockquote style="background: #3DED97;">How are missing values correlated to other variables?</blockquote>
 
-![Missing Values Relationship with All Variables](\img\posts\wids-datathon\output_16_0.png)
+<center><img src="/img/posts/wids-datathon/output_16_0.png" height ="1000 px"> <br><br></center>
 
 ### 2. Model to Impute Missing Values
 
@@ -38,9 +38,9 @@ Since Energy Star Rating was highly correlated to our target variable Site EUI, 
 
 I imputed Energy Star Rating for the whole train set and not inside the cross validation loop as it would have been computationally expensive. I compared predictions against a holdout set. The results were better than using Simple Impute median values (23% lower RMSE; reduction from 29.56 to 22.73).
 
-> Missing Value Model Predictions vs Holdout Data
+<blockquote style="background: #3DED97;">Missing Value Model Predictions vs Holdout Data</blockquote>
 
-![Missing Values Model Imputation Results](\img\posts\wids-datathon\output_76_0.png)
+<center><img src="/img/posts/wids-datathon/output_76_0.png" width = "100% "> <br><br></center>
 
 ### 3. Feature Engineering
 
@@ -48,21 +48,21 @@ I created several features using the existing dataset. One of the engineered fea
 
 I visualized some of the features below:
 
-> Categorizing Building Age
+<blockquote style="background: #3DED97;">Categorizing Building Age</blockquote>
 
-![Year Built Categories](\img\posts\wids-datathon\output_25_1.png)
+<center><img src="/img/posts/wids-datathon/output_25_1.png" width = "100% "> <br><br></center>
 
-> Deviation from Room Temperature for every month
+<blockquote style="background: #3DED97;">Deviation from Room Temperature for every month</blockquote>
 
-![Deviation from Room Temp](\img\posts\wids-datathon\output_31_1.png)
+<center><img src="/img/posts/wids-datathon/output_31_1.png" width = "100% "> <br><br></center>
 
-> Categorization of Facility Type by Median Site EUI
+<blockquote style="background: #3DED97;">Categorization of Facility Type by Median Site EUI</blockquote>
 
-![Categorization of Facility Type by Median Site EUI](\img\posts\wids-datathon\output_34_0.png)
+<center><img src="/img/posts/wids-datathon/output_34_0.png" width = "100% "> <br><br></center>
 
-> Creating Building Clusters using PCA and K-Means Clustering
+<blockquote style="background: #3DED97;">Creating Building Clusters using PCA and K-Means Clustering</blockquote>
 
-![K-Means Clustering](\img\posts\wids-datathon\output_52_0.png)
+<center><img src="/img/posts/wids-datathon/output_52_0.png" width = "100% "> <br><br></center>
 
 ### 4. Select Features
 
